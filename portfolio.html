@@ -1,95 +1,734 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Satvik Nayak's developer portfolio: skills, projects, education and training. SN Tech Solutions, web development and IT services.">
-  <title>Portfolio | Satvik Nayak — SN Tech Solutions</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="portfolio.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html#home" aria-label="SN Tech Solutions home"><span class="brand-mark">SN</span><span class="brand-copy"><strong>SN TECH SOLUTIONS</strong><small>Your Trusted IT Partner</small></span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
-    <nav class="navlist" id="navList" aria-label="Main navigation">
-      <a href="index.html#home">Home</a><a href="index.html#about">About</a><a href="index.html#services">Services</a><a href="portfolio.html" aria-current="page">Portfolio</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
-    </nav>
-    <a class="header-cta" href="#contact">Contact me <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-  </header>
+/* Portfolio page additions — follows the main SN Tech Solutions navy/cyan theme. */
+.portfolio-hero {
+    min-height: calc(100vh - 82px);
+    padding: 72px 8%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(120deg, #061a38 0%, #0b376c 70%, #075ca8 100%);
+    color: #fff
+}
 
-  <main>
-    <section class="portfolio-hero">
-      <div class="portfolio-hero-copy">
-        <p class="section-kicker"><span class="tiny-line"></span> PERSONAL PORTFOLIO</p>
-        <p class="portfolio-intro">Hello, I'm <strong>Satvik Nayak</strong></p>
-        <h1>Developer mindset.<br><span>Problem-solving approach.</span></h1>
-        <p class="portfolio-lead">BE Computer Science graduate interested in web development, software projects and practical technology solutions. I enjoy turning ideas into useful, user-friendly digital experiences.</p>
-        <div class="portfolio-actions"><a class="btn btn-primary" href="#projects">Explore my projects <i class="fa-solid fa-arrow-right"></i></a><a class="btn btn-secondary portfolio-outline" href="https://wa.me/918431161859" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Contact me</a></div>
-        <div class="portfolio-chips"><span><i class="fa-solid fa-code"></i> Web development</span><span><i class="fa-solid fa-brain"></i> AI / ML interest</span><span><i class="fa-solid fa-laptop-code"></i> Software projects</span></div>
-      </div>
-    </section>
+.portfolio-hero:before,
+.portfolio-hero:after {
+    content: "";
+    position: absolute;
+    border: 1px solid #ffffff13;
+    border-radius: 50%;
+    pointer-events: none
+}
 
-    <section class="section portfolio-about" id="about-me">
-      <div class="section-heading"><p class="section-kicker">About & qualifications</p><h2>Computer Science graduate.<br><span>Technology enthusiast.</span></h2><p>I'm Satvik Nayak, a BE Computer Science graduate interested in web development, software engineering, AI/ML and practical technology solutions. I enjoy learning by building projects, improving user experiences and solving real-world problems with technology.</p></div>
-      <div class="profile-facts">
-        <article class="profile-fact"><span class="fact-icon"><i class="fa-solid fa-graduation-cap"></i></span><div><small>Qualification</small><h3>Bachelor of Engineering</h3><p>Computer Science</p></div></article>
-        <article class="profile-fact"><span class="fact-icon"><i class="fa-solid fa-laptop-code"></i></span><div><small>Training & learning</small><h3>Edutainer & Kodnest</h3><p>Web development, programming, Android basics and data structures</p></div></article>
-        <article class="profile-fact"><span class="fact-icon"><i class="fa-solid fa-chart-column"></i></span><div><small>Job simulation</small><h3>Deloitte — Forage</h3><p>Data analytics simulation using Excel and Tableau</p></div></article>
-      </div>
-      <div class="about-details">
-        <article><h3><i class="fa-solid fa-code"></i> Technical interests</h3><p>Frontend and backend development, Python, JavaScript, databases, AI/ML, cloud technologies and data analytics.</p></article>
-        <article><h3><i class="fa-solid fa-rocket"></i> Career goal</h3><p>To contribute to real software and technology projects, keep developing my technical skills and create reliable, user-friendly solutions.</p></article>
-      </div>
-    </section>
+.portfolio-hero:before {
+    width: 520px;
+    height: 520px;
+    right: -150px;
+    top: -220px;
+    box-shadow: 0 0 0 40px #ffffff05, 0 0 0 85px #ffffff04
+}
 
-    <section class="section portfolio-skills" id="skills">
-      <div class="section-heading"><p class="section-kicker">Technical toolkit</p><h2>Skills I'm building <span>with.</span></h2><p>A selection of languages, frameworks and tools from my learning and project work.</p></div>
-      <div class="skill-groups">
-        <article class="skill-card"><span class="skill-icon"><i class="fa-solid fa-code"></i></span><h3>Programming</h3><div class="skill-tags"><span>Python</span><span>JavaScript</span><span>C</span><span>Java</span><span>PHP</span><span>SQL</span></div></article>
-        <article class="skill-card"><span class="skill-icon"><i class="fa-solid fa-window-maximize"></i></span><h3>Web Development</h3><div class="skill-tags"><span>HTML</span><span>CSS</span><span>React</span><span>Node.js</span><span>Bootstrap</span></div></article>
-        <article class="skill-card"><span class="skill-icon"><i class="fa-solid fa-database"></i></span><h3>Data & Backend</h3><div class="skill-tags"><span>MySQL</span><span>MongoDB</span><span>SQLite</span><span>Flask</span><span>REST concepts</span></div></article>
-        <article class="skill-card"><span class="skill-icon"><i class="fa-solid fa-robot"></i></span><h3>AI, Data & Tools</h3><div class="skill-tags"><span>MediaPipe</span><span>OpenCV</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>Git / GitHub</span><span>Tableau</span><span>Excel</span></div></article>
-      </div>
-      <p class="skills-note"><i class="fa-solid fa-circle-info"></i> Skills listed reflect technologies explored through study and project work; proficiency can vary by tool.</p>
-    </section>
+.portfolio-hero:after {
+    width: 300px;
+    height: 300px;
+    left: -190px;
+    bottom: -190px;
+    box-shadow: 0 0 0 35px #ffffff05
+}
 
-    <section class="section portfolio-projects" id="projects">
-      <div class="section-heading"><p class="section-kicker">Selected work</p><h2>Projects that turn ideas <span>into applications.</span></h2><p>Project summaries based on the work and concepts I've explored.</p></div>
-      <div class="project-grid">
-        <article class="project-card project-featured"><div class="project-topline"><span class="project-symbol"><i class="fa-solid fa-person-running"></i></span><span class="project-type">AI · Computer Vision</span></div><h3>FlexiFit — AI Personalized Fitness Coach</h3><p>A fitness concept combining workout guidance, pose tracking and personalized recommendations in one experience.</p><div class="project-tags"><span>React</span><span>Python</span><span>MediaPipe</span><span>Gemini</span><span>MongoDB / Convex concepts</span></div><ul><li>Pose estimation and exercise feedback</li><li>Workout and diet planning concepts</li><li>Progress tracking and user profiles</li></ul></article>
-        <article class="project-card"><div class="project-topline"><span class="project-symbol"><i class="fa-solid fa-car-side"></i></span><span class="project-type">Web application</span></div><h3>TRANSPORTENT — Car Rental Website</h3><p>A vehicle rental web application concept for searching, comparing and booking cars or bikes.</p><div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>PHP</span><span>MySQL</span></div><ul><li>Vehicle search and filtering</li><li>Booking flow and user authentication concepts</li><li>Administration dashboard concept</li></ul></article>
-        <article class="project-card"><div class="project-topline"><span class="project-symbol"><i class="fa-solid fa-calendar-check"></i></span><span class="project-type">Management system</span></div><h3>Attendance Management System</h3><p>A web-based concept for recording attendance and organizing daily reports by class or session.</p><div class="project-tags"><span>PHP</span><span>MySQL</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div><ul><li>Admin and teacher login concepts</li><li>Student attendance entry</li><li>Daily attendance reporting</li></ul></article>
-        <article class="project-card"><div class="project-topline"><span class="project-symbol"><i class="fa-solid fa-chart-line"></i></span><span class="project-type">AI · Data</span></div><h3>AI Business Advisor for Startups</h3><p>An advisor concept that brings forecasting, startup insights and question-answering into a single interface.</p><div class="project-tags"><span>Python</span><span>Flask</span><span>FAISS</span><span>Sentence Transformers</span><span>SQLite</span></div><ul><li>Revenue and success prediction concepts</li><li>Retrieval-augmented question answering</li><li>Business insight chatbot concept</li></ul></article>
-      </div>
-      <div class="project-note"><i class="fa-solid fa-code-branch"></i><p><strong>Want to see the implementation?</strong><br>Add your GitHub repository links to each project card when your repositories are ready to share.</p></div>
-    </section>
+.portfolio-hero-copy {
+    position: relative;
+    z-index: 2;
+    max-width: 700px
+}
 
-    <section class="section portfolio-experience" id="experience">
-      <div class="section-heading"><p class="section-kicker">Learning & experience</p><h2>Learning through <span>practice.</span></h2><p>Training and project-based learning that has helped me explore web, software and data tools.</p></div>
-      <div class="timeline">
-        <article class="timeline-item"><span class="timeline-marker"><i class="fa-solid fa-laptop-code"></i></span><div class="timeline-content"><div class="timeline-meta">Internship / training</div><h3>Edutainer India — Technical Learning</h3><p>Worked through learning activities involving HTML, CSS, Bootstrap, React, Kotlin basics and Android Studio, along with assignments and small implementations.</p><div class="project-tags"><span>HTML / CSS</span><span>React</span><span>Kotlin</span><span>Android Studio</span></div></div></article>
-        <article class="timeline-item"><span class="timeline-marker"><i class="fa-solid fa-code"></i></span><div class="timeline-content"><div class="timeline-meta">Training</div><h3>Kodnest — Programming & DSA Learning</h3><p>Explored programming fundamentals and data structures and algorithms, including arrays, linked lists, trees, searching, sorting and graph traversal.</p><div class="project-tags"><span>Programming</span><span>DSA</span><span>Problem solving</span></div></div></article>
-        <article class="timeline-item"><span class="timeline-marker"><i class="fa-solid fa-chart-column"></i></span><div class="timeline-content"><div class="timeline-meta">Forage job simulation · July 2026</div><h3>Deloitte — Data Analytics Job Simulation</h3><p>Completed a virtual job simulation involving data analysis and forensic technology, using Excel to classify data and draw conclusions and Tableau to create a dashboard.</p><div class="project-tags"><span>Excel</span><span>Tableau</span><span>Data analysis</span></div></div></article>
-      </div>
-    </section>
+.portfolio-hero .section-kicker {
+    color: var(--cyan);
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
 
-    <section class="section portfolio-education" id="education">
-      <div class="education-panel"><span class="education-icon"><i class="fa-solid fa-graduation-cap"></i></span><div><p class="section-kicker">Education</p><h2>BE in Computer Science</h2><p>Graduate · Interested in software development, AI/ML and modern web technologies.</p></div><span class="education-stamp">CS</span></div>
-    </section>
+.tiny-line {
+    display: inline-block;
+    width: 25px;
+    height: 2px;
+    background: var(--cyan)
+}
 
-    <section class="section contact portfolio-contact" id="contact">
-      <div class="contact-grid"><div class="contact-copy"><p class="section-kicker">Let's connect</p><h2>Have a project or <span>opportunity?</span></h2><p>I'm interested in discussing software projects, web development opportunities and practical IT solutions.</p><div class="contact-line"><span><i class="fa-solid fa-phone"></i></span><div><small>Phone / WhatsApp</small><a href="https://wa.me/918431161859" target="_blank" rel="noopener">+91 84311 61859</a></div></div><div class="contact-line"><span><i class="fa-solid fa-envelope"></i></span><div><small>Email</small><a href="mailto:sntechsolutions@gmail.com">sntechsolutions@gmail.com</a></div></div><div class="contact-line"><span><i class="fa-solid fa-briefcase"></i></span><div><small>Business</small><a href="index.html">SN Tech Solutions</a></div></div></div>
-        <div class="portfolio-contact-card"><span class="contact-card-mark">SN</span><p>Thanks for visiting my portfolio.</p><h3>Let's create something useful.</h3><a class="btn btn-primary" href="https://wa.me/918431161859?text=Hello%20Satvik%2C%20I%20visited%20your%20portfolio." target="_blank" rel="noopener">Message on WhatsApp <i class="fa-brands fa-whatsapp"></i></a><a class="portfolio-email-link" href="mailto:sntechsolutions@gmail.com">Or send an email</a></div>
-      </div>
-    </section>
-  </main>
-  <footer><a class="brand footer-brand" href="index.html#home"><span class="brand-mark">SN</span><span class="brand-copy"><strong>SN TECH SOLUTIONS</strong><small>Your Trusted IT Partner</small></span></a><p>Portfolio of Satvik Nayak · Web Development · IT Solutions</p><span>© <span id="currentYear"></span> Satvik Nayak</span></footer>
-  <a class="floating-whatsapp" href="https://wa.me/918431161859" target="_blank" rel="noopener" aria-label="Contact Satvik Nayak on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-</body>
-</html>
+.portfolio-intro {
+    font-size: 1.2rem;
+    color: #d7e8fb;
+    margin: 20px 0 10px
+}
+
+.portfolio-intro strong {
+    color: #fff
+}
+
+.portfolio-hero h1 {
+    font-size: clamp(2.6rem, 4.7vw, 4.35rem);
+    line-height: 1.1;
+    letter-spacing: -1.8px;
+    margin-bottom: 22px
+}
+
+.portfolio-hero h1 span {
+    color: var(--cyan)
+}
+
+.portfolio-lead {
+    max-width: 640px;
+    color: #d0e0f4;
+    font-size: .98rem;
+    line-height: 1.9
+}
+
+.portfolio-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 28px
+}
+
+.portfolio-outline {
+    border-color: #ffffff65;
+    color: #fff;
+    background: #ffffff09
+}
+
+.portfolio-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 27px;
+    font-size: .76rem;
+    color: #d8e9fb
+}
+
+.portfolio-chips i {
+    color: var(--cyan);
+    margin-right: 6px
+}
+
+.portfolio-hero-visual {
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2
+}
+
+.portfolio-photo-frame {
+    width: min(355px, 78%);
+    aspect-ratio: 4/5;
+    border-radius: 190px 190px 35px 35px;
+    padding: 8px;
+    background: linear-gradient(135deg, var(--cyan), #fff 42%, var(--blue));
+    box-shadow: 0 20px 65px #0005;
+    overflow: hidden
+}
+
+.portfolio-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: inherit;
+    filter: grayscale(100%)
+}
+
+.portfolio-float {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 16px;
+    border-radius: 13px;
+    background: #fff;
+    color: var(--navy);
+    box-shadow: 0 14px 35px #0003;
+    min-width: 195px
+}
+
+.portfolio-float>i {
+    width: 39px;
+    height: 39px;
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+    background: #e7f7ff;
+    color: var(--blue);
+    font-size: 1.1rem
+}
+
+.portfolio-float b,
+.portfolio-float small {
+    display: block
+}
+
+.portfolio-float b {
+    font-size: .8rem
+}
+
+.portfolio-float small {
+    font-size: .66rem;
+    color: var(--muted)
+}
+
+.portfolio-float-one {
+    top: 65px;
+    left: -5px
+}
+
+.portfolio-float-two {
+    bottom: 55px;
+    right: -8px
+}
+
+.portfolio-about {
+    background: #fff
+}
+
+.profile-facts {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px
+}
+
+.profile-fact {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 23px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 24px #061d4205
+}
+
+.fact-icon,
+.skill-icon {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: #e7f7ff;
+    color: var(--blue);
+    font-size: 1.15rem
+}
+
+.profile-fact small {
+    color: var(--blue);
+    font-size: .7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px
+}
+
+.profile-fact h3 {
+    font-size: .96rem;
+    color: var(--navy);
+    line-height: 1.4;
+    margin: 5px 0
+}
+
+.profile-fact p {
+    font-size: .8rem;
+    color: var(--muted)
+}
+
+.portfolio-skills {
+    background: var(--pale)
+}
+
+.skill-groups {
+    max-width: 1120px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px
+}
+
+.skill-card {
+    padding: 22px;
+    border: 1px solid #dfeafa;
+    background: #fff;
+    border-radius: 16px
+}
+
+.skill-card h3 {
+    color: var(--navy);
+    font-size: 1rem;
+    margin: 13px 0
+}
+
+.skill-tags,
+.project-tags {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap
+}
+
+.skill-tags span,
+.project-tags span {
+    font-size: .68rem;
+    padding: 5px 9px;
+    border-radius: 7px;
+    background: #edf6ff;
+    color: #285079;
+    border: 1px solid #dfedfc
+}
+
+.skills-note {
+    max-width: 1120px;
+    margin: 20px auto 0;
+    color: var(--muted);
+    font-size: .75rem
+}
+
+.skills-note i {
+    color: var(--blue);
+    margin-right: 5px
+}
+
+.portfolio-projects {
+    background: #fff
+}
+
+.project-grid {
+    max-width: 1120px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px
+}
+
+.project-card {
+    padding: 26px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #fff;
+    transition: transform .2s, box-shadow .2s
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow)
+}
+
+.project-featured {
+    background: linear-gradient(145deg, #f3fbff, #fff);
+    border-color: #bdeafa
+}
+
+.project-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 17px
+}
+
+.project-symbol {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    color: #fff;
+    font-size: 1.2rem
+}
+
+.project-type {
+    font-size: .68rem;
+    color: #0877b6;
+    background: #e7faff;
+    padding: 6px 9px;
+    border-radius: 7px;
+    font-weight: 700
+}
+
+.project-card h3 {
+    font-size: 1.18rem;
+    line-height: 1.4;
+    color: var(--navy);
+    margin-bottom: 10px
+}
+
+.project-card>p {
+    font-size: .86rem;
+    color: var(--muted);
+    min-height: 60px
+}
+
+.project-tags {
+    margin: 15px 0
+}
+
+.project-card ul {
+    list-style: none;
+    border-top: 1px solid #e8eff7;
+    padding-top: 13px
+}
+
+.project-card li {
+    font-size: .79rem;
+    color: #435671;
+    margin: 7px 0
+}
+
+.project-card li:before {
+    content: '✓';
+    font-weight: 800;
+    color: var(--blue);
+    margin-right: 8px
+}
+
+.project-note {
+    max-width: 1120px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 20px;
+    margin: 20px auto 0;
+    border: 1px dashed #b6d5f4;
+    border-radius: 13px;
+    background: #f7fbff;
+    color: var(--muted);
+    font-size: .82rem
+}
+
+.project-note>i {
+    font-size: 1.35rem;
+    color: var(--blue)
+}
+
+.project-note strong {
+    color: var(--navy)
+}
+
+.portfolio-experience {
+    background: var(--pale)
+}
+
+.timeline {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    gap: 17px
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 16px;
+    align-items: start
+}
+
+.timeline-marker {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    color: #fff;
+    box-shadow: 0 8px 20px #1479e826
+}
+
+.timeline-content {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 23px
+}
+
+.timeline-meta {
+    font-size: .68rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
+    color: var(--blue)
+}
+
+.timeline-content h3 {
+    color: var(--navy);
+    font-size: 1.05rem;
+    margin: 6px 0
+}
+
+.timeline-content p {
+    color: var(--muted);
+    font-size: .85rem;
+    margin-bottom: 13px
+}
+
+.portfolio-education {
+    padding-top: 0;
+    background: var(--pale)
+}
+
+.education-panel {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 27px 30px;
+    background: linear-gradient(120deg, #071b3b, #0c3e79);
+    color: #fff;
+    border-radius: 19px;
+    position: relative;
+    overflow: hidden
+}
+
+.education-icon {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: #ffffff13;
+    color: var(--cyan);
+    font-size: 1.5rem
+}
+
+.education-panel .section-kicker {
+    font-size: .7rem;
+    color: var(--cyan);
+    font-weight: 800;
+    letter-spacing: 1.5px
+}
+
+.education-panel h2 {
+    font-size: 1.35rem;
+    margin: 4px 0
+}
+
+.education-panel p:last-child {
+    font-size: .82rem;
+    color: #d0e0f4
+}
+
+.education-stamp {
+    margin-left: auto;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff18
+}
+
+.portfolio-contact-card {
+    background: #fff;
+    color: var(--navy);
+    padding: 32px;
+    border-radius: 19px;
+    text-align: center;
+    box-shadow: 0 20px 55px #0002
+}
+
+.contact-card-mark {
+    width: 57px;
+    height: 57px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 16px;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.2rem
+}
+
+.portfolio-contact-card p {
+    color: var(--muted);
+    font-size: .82rem
+}
+
+.portfolio-contact-card h3 {
+    font-size: 1.35rem;
+    margin: 5px 0 20px;
+    color: var(--navy)
+}
+
+.portfolio-contact-card .btn {
+    width: 100%
+}
+
+.portfolio-email-link {
+    display: inline-block;
+    color: var(--blue);
+    font-size: .8rem;
+    font-weight: 700;
+    margin-top: 14px
+}
+
+@media(max-width:1000px) {
+    .portfolio-hero {
+        padding-left: 6%;
+        padding-right: 6%;
+        gap: 20px
+    }
+
+    .skill-groups {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .profile-facts {
+        grid-template-columns: 1fr
+    }
+
+    .portfolio-float-one {
+        left: -18px
+    }
+
+    .portfolio-float-two {
+        right: -12px
+    }
+}
+
+@media(max-width:760px) {
+    .portfolio-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 55px 6% 65px
+    }
+
+    .portfolio-hero .section-kicker,
+    .portfolio-actions,
+    .portfolio-chips {
+        justify-content: center
+    }
+
+    .portfolio-hero-visual {
+        min-height: 390px;
+        margin-top: 12px
+    }
+
+    .portfolio-photo-frame {
+        width: min(300px, 70%)
+    }
+
+    .portfolio-float-one {
+        left: 0;
+        top: 30px
+    }
+
+    .portfolio-float-two {
+        right: 0;
+        bottom: 35px
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr
+    }
+
+    .project-card>p {
+        min-height: 0
+    }
+
+    .education-stamp {
+        display: none
+    }
+
+    .portfolio-contact .contact-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+@media(max-width:500px) {
+    .portfolio-hero h1 {
+        font-size: 2.45rem;
+        letter-spacing: -1px
+    }
+
+    .portfolio-lead {
+        font-size: .88rem
+    }
+
+    .portfolio-hero-visual {
+        min-height: 335px
+    }
+
+    .portfolio-photo-frame {
+        width: 68%
+    }
+
+    .portfolio-float {
+        min-width: 168px;
+        padding: 10px;
+        gap: 8px
+    }
+
+    .portfolio-float b {
+        font-size: .72rem
+    }
+
+    .portfolio-float small {
+        font-size: .58rem
+    }
+
+    .portfolio-float>i {
+        width: 33px;
+        height: 33px
+    }
+
+    .portfolio-float-one {
+        left: -5px;
+        top: 18px
+    }
+
+    .portfolio-float-two {
+        right: -5px;
+        bottom: 30px
+    }
+
+    .portfolio-chips {
+        gap: 9px;
+        font-size: .68rem
+    }
+
+    .skill-groups {
+        grid-template-columns: 1fr
+    }
+
+    .timeline-item {
+        grid-template-columns: 40px 1fr;
+        gap: 10px
+    }
+
+    .timeline-marker {
+        width: 39px;
+        height: 39px
+    }
+
+    .timeline-content {
+        padding: 17px
+    }
+
+    .education-panel {
+        padding: 22px;
+        align-items: flex-start
+    }
+
+    .education-panel h2 {
+        font-size: 1.1rem
+    }
+
+    .portfolio-contact-card {
+        padding: 24px
+    }
+}
+
+/* Photo-free portfolio: hero is text-only; About section contains qualifications. */
